@@ -1,4 +1,4 @@
-## xvbf
+## alban.andrieu.xvbf
 
 [![Travis CI](http://img.shields.io/travis/AlbanAndrieu/ansible-xvbf.svg?style=flat)](http://travis-ci.org/AlbanAndrieu/ansible-xvbf) [![Branch](http://img.shields.io/github/tag/AlbanAndrieu/ansible-xvbf.svg?style=flat-square)](https://github.com/AlbanAndrieu/ansible-xvbf/tree/master) [![Donate](https://img.shields.io/gratipay/AlbanAndrieu.svg?style=flat)](https://www.gratipay.com/AlbanAndrieu)  [![Ansible Galaxy](http://img.shields.io/badge/galaxy-alban.andrieu.xvbf-blue.svg?style=flat)](https://galaxy.ansible.com/list#/roles/1174) [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 
@@ -20,7 +20,7 @@ To install it, run:
 List of default variables available in the inventory:
 
 ```yaml
-    ---
+        ---
     
     xvbf_enabled: yes                       # Enable module
 ```
@@ -33,7 +33,7 @@ Describe how to use in more detail...
 
 ### Authors and license
 
-`xvbf` role was written by:
+`alban.andrieu.xvbf` role was written by:
 - [Alban Andrieu](fr.linkedin.com/in/nabla/) | [e-mail](mailto:alban.andrieu@free.fr) | [Twitter](https://twitter.com/AlbanAndrieu) | [GitHub](https://github.com/AlbanAndrieu)
 - License: [GPLv3](https://tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29)
 
