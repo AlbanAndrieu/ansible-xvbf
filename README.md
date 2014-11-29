@@ -20,9 +20,7 @@ To install it, run:
 List of default variables available in the inventory:
 
 ```yaml
-        ---
-    
-    xvbf_enabled: yes                       # Enable module
+        xvbf_enabled: yes                       # Enable module
 ```
 
 
