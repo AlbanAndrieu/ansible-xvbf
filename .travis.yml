@@ -17,8 +17,8 @@ install:
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 script:
-  - ansible --version
+  - sudo ansible --version
   - export ANSIBLE_ROLES_PATH="../"
 #  - echo localhost > inventory
-  - ansible-playbook -i hosts --syntax-check xvbf.yml
-  - ansible-playbook -i hosts --connection=local --sudo -vvvv xvbf.yml
+  - sudo ansible-playbook -i hosts --syntax-check xvbf.yml
+  - sudo ansible-playbook -i hosts --connection=local --sudo -vvvv xvbf.yml
