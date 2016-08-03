@@ -10,7 +10,7 @@
    - xvfb
 
 - name: xvfb | Install xvfb package (RedHat based)
-  action: yum name={{ item }}' state=present
+  action: yum name={{ item }} state=present
   sudo: yes
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   tags: package
