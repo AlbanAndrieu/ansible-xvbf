@@ -3,7 +3,7 @@
 
 - name: xvfb | Install xvfb package (Debian based)
   apt: pkg={{ item }} state=present update_cache=yes
-  sudo: yes
+  become: yes
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
   tags: package
   with_items:
@@ -12,21 +12,27 @@
 
 - name: xvfb | Install xvfb package (RedHat based)
   action: yum name={{ item }} state=present
-  sudo: yes
+  become: yes
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   tags: package
   with_items:
    - Xvfb
   changed_when: False
 
+#Owner of /tmp/.X11-unix should be set to root on RedHat for Jenkins Xvfb plugin
+- name: xvfb | Create /tmp/.X11-unix directory
+  file: path=/tmp/.X11-unix state=directory owner=root group=root mode=0777
+  become: yes
+  changed_when: false
+
 - name: xvfb | Copy the xvfb init script
   copy: src=xvfb.sh dest=/etc/init.d/xvfb mode=0755
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-  sudo: yes
+  become: yes
   tags: configure
 
 - name: xvfb | Start the xvfb service
   service: name=xvfb state=started enabled=true
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-  sudo: yes
+  become: yes
   tags: service
