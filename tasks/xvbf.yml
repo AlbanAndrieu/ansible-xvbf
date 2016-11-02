@@ -19,6 +19,15 @@
    - Xvfb
   changed_when: False
 
+- name: xvfb | Remove /tmp/.X1* directory
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_fileglob:
+    - "/tmp/.X1*"
+  become: yes
+  changed_when: false
+
 #Owner of /tmp/.X11-unix should be set to root on RedHat for Jenkins Xvfb plugin
 - name: xvfb | Create /tmp/.X11-unix directory
   file: path=/tmp/.X11-unix state=directory owner=root group=root mode=0777
@@ -31,8 +40,8 @@
   become: yes
   tags: configure
 
-- name: xvfb | Start the xvfb service
-  service: name=xvfb state=started enabled=true
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-  become: yes
-  tags: service
+#- name: xvfb | Start the xvfb service
+#  service: name=xvfb state=started enabled=true
+#  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+#  become: yes
+#  tags: service
