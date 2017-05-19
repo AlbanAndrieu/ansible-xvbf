@@ -19,6 +19,15 @@
    - Xvfb
   changed_when: False
 
+- name: xvfb | Get pkgutil
+  shell: "echo y | pkgadd -d http://get.opencsw.org/now all"
+  when: ((ansible_distribution == 'Solaris') and (ansible_distribution_version not in ['11.1']))  
+  ignore_errors: true
+  become: yes
+
+#OK wget  http://mirror.opencsw.org/opencsw/
+
+- debug: msg="Check available package at https://www.opencsw.org"
 
 - name: xvfb | Install xvfb package (Solaris based)
   #action: "{{ ansible_pkg_mgr }} name={{ item }} state={{ util_pkg_state|default('present') }} update_cache=yes"
