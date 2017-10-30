@@ -11,15 +11,18 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - all
-    - lucid
-    - maverick
-    - natty
-    - oneiric
-    - precise
-    - quantal
-    - raring
-    - saucy
-    - trusty
+  - name: EL
+    versions:
+    - all
+  - name: FreeBSD
+    versions:
+    - all
+  - name: Solaris
+    versions:
+    - all    
+  - name: MacOSX
+    versions:
+    - all
   categories:
   - development
 
