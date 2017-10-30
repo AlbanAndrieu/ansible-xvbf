@@ -19,8 +19,14 @@ galaxy_info:
     - all
   - name: Solaris
     versions:
-    - all    
+    - all
   - name: MacOSX
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
     versions:
     - all
   categories:

@@ -23,5 +23,11 @@ galaxy_info:
   - name: MacOSX
     versions:
     - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all    
   categories:
   - development
