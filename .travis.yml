@@ -26,7 +26,7 @@ install:
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
 script:
-  - sudo ansible --version
+  - ansible --version
 
   # Prepare tests
   #- echo localhost > hosts
