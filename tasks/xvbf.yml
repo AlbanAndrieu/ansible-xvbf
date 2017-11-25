@@ -83,7 +83,7 @@
 
 - name: xvfb | Copy the xvfb init script
   copy: src=xvfb.sh dest=/etc/init.d/xvfb mode=0755
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
   become: yes
   tags: configure
 

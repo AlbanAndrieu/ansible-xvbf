@@ -1,3 +1,5 @@
 ---
 
 xvbf_enabled: yes                       # Enable module
+
+util_pkg_state: present
