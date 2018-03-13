@@ -23,6 +23,19 @@
   tags: package
   with_items:
    - Xvfb
+#   - xorg-x11-server-Xvfb
+  changed_when: false
+
+- name: xvfb | Get xvfb rpm (RedHat 6)
+  shell: wget http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm
+  become: yes
+  when: (ansible_distribution == 'RedHat' and ansible_distribution_major_version == '6')
+  changed_when: false
+  
+- name: xvfb | Install xvfb rpm (RedHat 6)
+  shell: yum localinstall xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm
+  become: yes
+  when: (ansible_distribution == 'RedHat' and ansible_distribution_major_version == '6')
   changed_when: false
 
 - name: xvfb | Get pkgutil
